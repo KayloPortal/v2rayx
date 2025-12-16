@@ -1,0 +1,59 @@
+.configs {
+  width: 100%;
+  margin-top: 15px;
+  display: grid;
+  grid-column: 1fr;
+  row-gap: 14px;
+  overflow: scroll;
+  height: 300px;
+}
+
+.config {
+  display: flex;
+  flex-direction: column;
+  row-gap: 14px;
+  background-color: var(--clr-525);
+  border-radius: 8px;
+  padding: 12px 14px;
+  border: 0.5px solid var(--clr-125);
+  cursor: default;
+}
+
+.config > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.config-btns {
+  display: flex;
+  column-gap: 6.8px;
+}
+
+.config-btns > * {
+  width: 17.5px;
+  aspect-ratio: 1;
+}
+
+.config-details {
+  display: flex;
+  align-items: center;
+  column-gap: 7px;
+}
+
+/* .config-name, .config-address, .config-ping, .config-protocol{
+
+} */
+
+
+.config-name {
+  font-size: var(--fs-500);
+}
+
+.config-address {
+  font-size: var(--fs-300);
+}
+
+.config-protocol, .config-ping {
+  font-size: var(--fs-200);
+}
