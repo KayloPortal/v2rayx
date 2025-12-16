@@ -1,0 +1,23 @@
+.start {
+  width: 152px;
+  aspect-ratio: 1;
+  border-radius: 100%;
+  background-color: var(--clr-910);
+  display: grid;
+  place-content: center;
+  margin-inline: auto;
+}
+
+.start-container {
+  width: 126px;
+  aspect-ratio: 1;
+  background-color: var(--clr-900);
+  border-radius: 100%;
+  display: grid;
+  place-content: center;
+  border: 1px solid var(--clr-100);
+}
+
+.start:hover{
+  opacity: 65%;
+}
