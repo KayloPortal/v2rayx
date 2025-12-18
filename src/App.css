@@ -45,6 +45,11 @@
   transition: all ease 0.15s;
 }
 
+@font-face {
+  font-family: Sora; /* set name */
+  src: url(/fonts/Sora-VariableFont_wght.ttf); /* url of the font */
+}
+
 body {
   font-family: var(--ff-main);
   color: var(--clr-100);

@@ -20,13 +20,13 @@ function Config(){
           <h3 className="config-name">shecan 123584652</h3>
           <div className="config-btns">
             <button>
-              <img src="/public/icons/share-2.svg" alt="Copy config" />
+              <img src="/icons/share-2.svg" alt="Copy config" />
             </button>
             <button>
-              <img src="/public/icons/edit.svg" alt="Edit config" />
+              <img src="/icons/edit.svg" alt="Edit config" />
             </button>
             <button>
-              <img src="/public/icons/trash-2.svg" alt="Delete config" />
+              <img src="/icons/trash-2.svg" alt="Delete config" />
             </button>
           </div>
         </div>
@@ -36,7 +36,7 @@ function Config(){
           </div>
           <div className="config-details">
             <p className="config-protocol">VLESS</p>
-            <img src="/public/icons/wifi-green.svg" alt="" />
+            <img src="/icons/wifi-green.svg" alt="" />
             <p className="config-ping">43ms</p>
           </div>
         </div>

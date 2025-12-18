@@ -8,7 +8,7 @@ function Section() {
         <button>Subscriptions <span className="line"></span></button>
       </span>
       <button className="header-btn">
-        <p>Add</p><img src="/public/icons/plus.svg" alt="Add" />
+        <p>Add</p><img src="/icons/plus.svg" alt="Add" />
       </button>
     </div>
   );
