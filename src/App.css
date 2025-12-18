@@ -115,6 +115,10 @@ h1, h2, h3, p {
 
 /*  */
 
+body {
+  overflow: hidden;
+}
+
 main {
   width: 100vw;
   height: 100vh;
