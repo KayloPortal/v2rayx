@@ -1,0 +1,13 @@
+.footer {
+  margin-inline: auto;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  padding-block: 24px;
+}
+
+.footer-logo {
+  position: absolute;
+  right: 0;
+}

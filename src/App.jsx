@@ -2,6 +2,7 @@ import "./App.css";
 import Configs from "./Components/Configs";
 import Section from "./Components/Section";
 import Start from "./Components/Start";
+import Footer from "./Footer";
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <Start />
       <Section />
       <Configs />
+      <Footer />
     </main>
   );
 }
