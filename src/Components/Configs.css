@@ -1,15 +1,15 @@
 .configs {
   width: 100%;
   margin-top: 15px;
-  display: grid;
-  grid-column: 1fr;
+  display: flex;
+  flex-direction: column;
   row-gap: 14px;
   overflow: scroll;
   height: 369px;
-  height: min-content;
 }
 
 .config {
+  width: 100%;
   display: flex;
   flex-direction: column;
   row-gap: 10px;
