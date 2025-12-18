@@ -1,37 +1,52 @@
+import { useState } from "react";
 import "./Configs.css";
 
-const configs = [
+const configsData = [
   {
     "title": "shecan 123584652",
     "address": "2.shecan.market.**",
     "protocol": "VLESS",
     "ping": "43",
+    "id": "asddsa"
   },
   {
     "title": "shecan",
     "address": "10.125.231.24",
     "protocol": "VMESS",
     "ping": "200",
+    "id": "assdsdsdda"
   },
   {
     "title": "v",
     "address": "market.**",
     "protocol": "Reality",
     "ping": "320",
+    "id": "asda"
   }
 ]
 
 function Configs() {
+  const [configs, setConfigs] = useState(configsData)
+  const [selectedId, setSelectedId] = useState(configsData[0]? configsData[0].id : -1)
+
+  function removeConfigHandler(id) {
+    setConfigs(prev => prev.filter(config => config.id != id))
+  }
+
+  function clickHandler(id) {
+    setSelectedId(id)
+  }
+
   return (
     <div className="configs">
-      {configs.map(info => <Config data={info} />)}
+      {configs.map(info => <Config clickHandler={clickHandler} isSelected={selectedId == info.id} key={info.id} data={info} removeConfigHandler={removeConfigHandler} />)}
     </div>
   );
 }
 
-function Config({data: {title, address, protocol, ping}}){
+function Config({data: {title, address, protocol, ping, id}, clickHandler, removeConfigHandler, isSelected}){
   return (
-      <div className="config">
+      <div onClick={() => clickHandler(id)} className={`config ${isSelected? "config--selected" : ""}`}>
         <div>
           <h3 className="config-name">{title}</h3>
           <div className="config-btns">
@@ -41,7 +56,7 @@ function Config({data: {title, address, protocol, ping}}){
             <button>
               <img src="/icons/edit.svg" alt="Edit config" />
             </button>
-            <button>
+            <button onClick={() => removeConfigHandler(id)}>
               <img src="/icons/trash-2.svg" alt="Delete config" />
             </button>
           </div>
