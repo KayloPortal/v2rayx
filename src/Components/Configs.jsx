@@ -22,24 +22,24 @@ const configsData = [
     "protocol": "Reality",
     "ping": "320",
     "id": "asda"
-  }
+    }
 ]
 
 function Configs() {
   const [configs, setConfigs] = useState(configsData)
-  const [selectedId, setSelectedId] = useState(configsData[0]? configsData[0].id : -1)
+  const [selectedConfigId, setSelectedConfigId] = useState(configsData[0]? configsData[0].id : -1)
 
   function removeConfigHandler(id) {
     setConfigs(prev => prev.filter(config => config.id != id))
   }
 
   function clickHandler(id) {
-    setSelectedId(id)
+    setSelectedConfigId(id)
   }
 
   return (
     <div className="configs">
-      {configs.map(info => <Config clickHandler={clickHandler} isSelected={selectedId == info.id} key={info.id} data={info} removeConfigHandler={removeConfigHandler} />)}
+      {configs.map(info => <Config clickHandler={clickHandler} isSelected={selectedConfigId == info.id} key={info.id} data={info} removeConfigHandler={removeConfigHandler} />)}
     </div>
   );
 }
