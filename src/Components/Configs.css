@@ -6,6 +6,7 @@
   row-gap: 14px;
   overflow: scroll;
   height: 369px;
+  height: min-content;
 }
 
 .config {
