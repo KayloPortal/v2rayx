@@ -41,6 +41,10 @@
   column-gap: 7px;
 }
 
+.config-protocol {
+  color: var(--clr-300);
+}
+
 /* .config-name, .config-address, .config-ping, .config-protocol{
 
 } */
