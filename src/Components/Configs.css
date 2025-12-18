@@ -19,6 +19,11 @@
   cursor: default;
 }
 
+.config--selected {
+  border-color: rgba(255, 255, 255, 0);
+  background-color: var(--clr-825);
+}
+
 .config > div {
   display: flex;
   align-items: center;
