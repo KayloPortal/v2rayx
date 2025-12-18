@@ -11,7 +11,7 @@
 .config {
   display: flex;
   flex-direction: column;
-  row-gap: 14px;
+  row-gap: 10px;
   background-color: var(--clr-525);
   border-radius: 8px;
   padding: 12px 14px;
