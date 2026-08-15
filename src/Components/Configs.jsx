@@ -45,7 +45,21 @@ function Configs() {
 
   return (
     <div className="configs">
-      {configs.map(info => <Config clickHandler={clickHandler} isSelected={selectedConfigId === info.id} key={info.id} data={info} removeConfigHandler={removeConfigHandler} />)}
+      {configs.length === 0 ? (
+        <div style={{ textAlign: "center", color: "#888", padding: "2rem" }}>
+          <p>No configurations available</p>
+        </div>
+      ) : (
+        configs.map(info => (
+          <Config
+            clickHandler={clickHandler}
+            isSelected={selectedConfigId === info.id}
+            key={info.id}
+            data={info}
+            removeConfigHandler={removeConfigHandler}
+          />
+        ))
+      )}
     </div>
   );
 }
@@ -56,13 +70,13 @@ function Config({data: {title, address, protocol, ping, id}, clickHandler, remov
         <div>
           <h3 className="config-name">{title}</h3>
           <div className="config-btns">
-            <button onClick={(e) => e.stopPropagation()}>
+            <button onClick={(e) => e.stopPropagation()} aria-label="Copy config">
               <img src="/icons/share-2.svg" alt="Copy config" />
             </button>
-            <button onClick={(e) => e.stopPropagation()}>
+            <button onClick={(e) => e.stopPropagation()} aria-label="Edit config">
               <img src="/icons/edit.svg" alt="Edit config" />
             </button>
-            <button onClick={(e) => { e.stopPropagation(); removeConfigHandler(id); }}>
+            <button onClick={(e) => { e.stopPropagation(); removeConfigHandler(id); }} aria-label="Delete config">
               <img src="/icons/trash-2.svg" alt="Delete config" />
             </button>
           </div>
