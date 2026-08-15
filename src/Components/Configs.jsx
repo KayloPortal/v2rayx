@@ -30,16 +30,22 @@ function Configs() {
   const [selectedConfigId, setSelectedConfigId] = useState(configsData[0]? configsData[0].id : -1)
 
   function removeConfigHandler(id) {
-    setConfigs(prev => prev.filter(config => config.id != id))
+    setConfigs(prev => {
+      const updated = prev.filter(config => config.id !== id);
+      if (selectedConfigId === id) {
+        setSelectedConfigId(updated[0] ? updated[0].id : -1);
+      }
+      return updated;
+    });
   }
 
   function clickHandler(id) {
-    setSelectedConfigId(id)
+    setSelectedConfigId(id);
   }
 
   return (
     <div className="configs">
-      {configs.map(info => <Config clickHandler={clickHandler} isSelected={selectedConfigId == info.id} key={info.id} data={info} removeConfigHandler={removeConfigHandler} />)}
+      {configs.map(info => <Config clickHandler={clickHandler} isSelected={selectedConfigId === info.id} key={info.id} data={info} removeConfigHandler={removeConfigHandler} />)}
     </div>
   );
 }
@@ -50,13 +56,13 @@ function Config({data: {title, address, protocol, ping, id}, clickHandler, remov
         <div>
           <h3 className="config-name">{title}</h3>
           <div className="config-btns">
-            <button>
+            <button onClick={(e) => e.stopPropagation()}>
               <img src="/icons/share-2.svg" alt="Copy config" />
             </button>
-            <button>
+            <button onClick={(e) => e.stopPropagation()}>
               <img src="/icons/edit.svg" alt="Edit config" />
             </button>
-            <button onClick={() => removeConfigHandler(id)}>
+            <button onClick={(e) => { e.stopPropagation(); removeConfigHandler(id); }}>
               <img src="/icons/trash-2.svg" alt="Delete config" />
             </button>
           </div>
