@@ -12,9 +12,12 @@
   "app": {
     "windows": [
       {
-        "title": "v2rayx",
+        "title": "V2rayX",
         "width": 800,
-        "height": 600
+        "height": 600,
+        "minWidth": 420,
+        "minHeight": 580,
+        "resizable": true
       }
     ],
     "security": {
